@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+    </head>
+
+    <body>
+        <header>
+            <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary mb-4">
+                <div class="container-fluid">
+                    <a class="navbar-brand"  style="color: aliceblue" href="#">Gerenciamento de atividades</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav" >
+                            <a class="nav-link active"  style="color: aliceblue" aria-current="page" th:href="@{/}">Início</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="container col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <h5 style="text-align: center">Esse recurso está em atividade e não pode ser excluído.</h5>
+
+                </div>
+            </div>
+            <div class="row g-2 mt-5">
+                <div class="col" style="display: flex;flex-direction: row-reverse;">
+                    <a th:href="@{'/responsaveis'}" class="btn btn-outline-primary btn-md mb-3" style="border: none;">Voltar</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

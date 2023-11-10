@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Criar nova atividade</title>
+		<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+	</head>
+
+	<body>
+		<header>
+			<nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary mb-4">
+				<div class="container-fluid">
+					<a class="navbar-brand"  style="color: aliceblue" href="#">Gerenciamento de atividades</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+						<div class="navbar-nav" >
+							<a class="nav-link active"  style="color: aliceblue" aria-current="page" th:href="@{/}">Início</a>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<div class="container col-md-5">
+			<div class="card">
+				<div class="card-body">
+					<div th:if="${atividade.id == null}">
+						<h3>Criar nova atividade</h3>
+					</div>
+
+					<div th:unless="${atividade.id == null}">
+						<h3>Editar atividade</h3>
+					</div>
+
+					<form th:action="@{/atividades/save}" th:object="${atividade}" method="post">
+						<input type="hidden" th:field="*{id}" th:value="${atividade.id}" />
+
+						<div class="mb-3">
+							<div class="form-group mt-4 mb-3">
+								<label class="">Atividade </label>
+
+								<div class="col-sm-8">
+									<input type="text" th:field="*{nome}" class="form-control" required placeholder="Informe a atividade"/>
+								</div>
+							</div>
+
+							<div class="form-group mb-3">
+								<label>Responsáveis</label>
+
+								<div class="col-sm-8">
+									<select th:field="*{responsaveis}" class="form-control" multiple="multiple" required >
+										<th:block th:each="respon : ${listResponsaveis}">
+											<option th:text="${respon.nome}" th:value="${respon.id}"></option>
+										</th:block>
+									</select>
+
+								</div>
+							</div>
+
+							<div class="form-group mb-3">
+								<label>Data inicial </label>
+
+								<div class="col-sm-8">
+									<input type="date" th:field="*{dataInicio}" class="form-control" required placeholder="data"/>
+								</div>
+							</div>
+
+							<div class="form-group mb-3">
+								<label >Data final </label>
+
+								<div class="col-sm-8">
+									<input type="date" th:field="*{dataFinal}" class="form-control" required placeholder="data"/>
+								</div>
+							</div>
+
+							<div class="form-group mb-5">
+								<label>Dependência: </label>
+
+								<div class="col-sm-8">
+									<select th:field="*{dependencia}" class="form-select mb-3" aria-label=".form-select example">
+										<option th:selected="0" th:value="0" >-</option>
+
+										<th:block th:each="dep : ${listAtividades}">
+											<ol th:if = "${atividade.id != dep.id}">
+												<option th:text="${dep.id}" th:value="${dep.id}"></option>
+											</ol>
+										</th:block>
+									</select>
+								</div>
+							</div>
+
+							<div class="row mt-2 g-2">
+								<div class="col">
+									<button th:if="${atividade.id == null}" type="reset" class="btn btn-outline-secondary btn-md btn-me-3" style="border: none;">Limpar formulário</button>
+									<button type="submit"  class="btn btn-outline-success btn-md" style="border: none;">Salvar</button>
+								</div>
+
+								<div class="col" style="display: flex;flex-direction: row-reverse;">
+									<a th:href="@{'/atividades'}" class="btn btn-outline-primary btn-md mb-2" style="border: none;">Voltar</a>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

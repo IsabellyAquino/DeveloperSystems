@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Atividades Início</title>
+		<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+	</head>
+
+	<body>
+		<header>
+			<nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary mb-4">
+				<div class="container-fluid">
+					<a class="navbar-brand"  style="color: aliceblue" href="#">Gerenciamento de atividades</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+						<div class="navbar-nav" >
+							<a class="nav-link"  style="color: aliceblue" th:href="@{/responsaveis}">Recursos</a>
+							<a class="nav-link"  style="color: aliceblue"th:href="@{/atividades}">Atividades</a>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<br>
+
+		<div class="container text-center">
+			<div>
+				<h3>Olá, seja bem-vindo!</h3>
+				<hr>
+		</div>
+
+	</body>
+
+</html>
