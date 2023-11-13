@@ -1,6 +1,6 @@
 <h1 align="center"> Sistema de gerenciamento de atividades </h1>
 
-<p align="center">Aplicação desenvolvida MVP(Minimum Viable Product) para resolução de um problema apresentado pelo Senai no curso técnico em Desenvolvimento de Sistemas. O projeto é um CRUD simples no padrão arquitetura MVC(Model-View-Controller) relacionado a agendamento de academia.
+<p align="center">Aplicação desenvolvida MVP(Minimum Viable Product) para resolução de um problema apresentado pelo Senai no curso técnico em Desenvolvimento de Sistemas. O projeto é um CRUD simples no padrão arquitetura MVC(Model-View-Controller) relacionado a gestão de atividades.
  <br/>
 </p>
 
