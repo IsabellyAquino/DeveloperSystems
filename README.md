@@ -12,7 +12,9 @@ O principal objetivo deste projeto é fornecer uma solução básica para a gest
 - Inserir informações de novos recursos como responsáveis.
 - Inserir informações de novos atividades definindo nome, responsáveis, data inicial, data final e dependencia .
 - Editar informações de recursos e atividades existentes.
-- Listar todos os recursos e tambem todas as atividades armazenados no banco de dados.
+- Listar todos os recursos e também todas as atividades armazenados no banco de dados.
+- Há verificação de utilização de Recursos para que não haja exclusão quando ja utilizado em uma atividade.
+- Há verificação na listagem de recurso e atividades se há recurso ou atividade adicionado.
 - Excluir recursos e atividades do banco de dados.
 
 
