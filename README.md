@@ -11,7 +11,6 @@ O principal objetivo deste projeto é fornecer uma solução básica para a gest
 
 - Inserir informações de novos recursos como responsáveis.
 - Inserir informações de novos atividades definindo nome, responsáveis, data inicial, data final e dependencia .
-- Pesquisar agendamentamento por apartamento.
 - Editar informações de recursos e atividades existentes.
 - Listar todos os recursos e tambem todas as atividades armazenados no banco de dados.
 - Excluir recursos e atividades do banco de dados.
